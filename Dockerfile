@@ -1,3 +1,3 @@
 FROM dataquestio/python2-starter
 
-COPY data-analysis /home/ds/notebooks
+COPY src /home/ds/notebooks

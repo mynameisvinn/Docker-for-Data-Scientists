@@ -12,9 +12,12 @@ COPY src /home/ds/notebooks
 ```
 
 ## build
-do `docker build -t mynameisvinn/foo .  # dont forget the period`
+do `docker build -t mynameisvinn/ipython .  # dont forget the period`
 
 ## run
-do `docker run -d -p 8888:8888 mynameisvinn/foo`
+do `docker run -d -p 8888:1111 mynameisvinn/ipython`. 
 
-find CONTAINER_IP with `docker-machine ip default`. then go to CONTAINER_IP:8888. 
+to access the dockerized notebook, go to `CONTAINER_IP:1111`. note: you can find CONTAINER_IP with `docker-machine ip default`. 
+
+## stop docker containers
+do `docker stop $(docker ps -a -q)`

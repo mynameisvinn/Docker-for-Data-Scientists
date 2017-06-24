@@ -26,13 +26,14 @@ COPY src /home/ds/notebooks
 
 
 ## build
-do `docker build -t mynameisvinn/ipython .`
-dont forget the period!
+do `docker build -t mynameisvinn/ipython .` dont forget the period!
+this build will take a few minutes the first time, as docker starts pulling layers (eg dataquestio/python2 layer). now is a good time for a hacker news break.
 
-## run docker container
-do `docker run -d -p 8888:1111 mynameisvinn/ipython`. this creates a docker container, which is isolated from your local machine. inside this container is a notebook.
+## run
+do `docker run -d -p 8888:8888 mynameisvinn/ipython`. this creates a docker container, which is isolated from your local machine. inside this container is a notebook, which can be accessed at `CONTAINER_IP:1111`. (find CONTAINER_IP with `docker-machine ip default`.)
 
-to access the dockerized notebook, go to `CONTAINER_IP:1111`. note: you can find CONTAINER_IP with `docker-machine ip default`. 
+*`-d` indicates detached mode.
+*`-p` binds ports between container and your local machine.
 
-## stop docker containers
+## stop
 do `docker stop $(docker ps -a -q)`

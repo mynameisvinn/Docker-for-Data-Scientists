@@ -1,3 +1,3 @@
 FROM dataquestio/python2-starter
 
-COPY src /home/ds/notebooks
+COPY notebooks /home/ds/notebooks

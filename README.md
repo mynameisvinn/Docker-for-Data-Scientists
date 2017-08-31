@@ -34,3 +34,6 @@ do `docker run -d -p 8888:8888 mynameisvinn/ipython`. this creates a docker cont
 
 ## stop active containers
 do `docker stop $(docker ps -a -q)`
+
+## remove all docker images
+do `docker rmi $(docker images -a -q)`

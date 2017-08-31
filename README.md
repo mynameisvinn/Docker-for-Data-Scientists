@@ -32,6 +32,9 @@ do `docker run -d -p 8888:8888 mynameisvinn/ipython`. this creates a docker cont
 *`-d` indicates detached mode.
 *`-p` binds ports between container and your local machine.
 
+## shell
+to shell into docker, do `docker run -it mynameisvinn/ipython`.
+
 ## stop active containers
 do `docker stop $(docker ps -a -q)`
 

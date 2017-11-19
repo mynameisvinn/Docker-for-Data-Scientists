@@ -5,7 +5,7 @@ a bare bones example to containerize jupyter notebooks.
 after cloning this repo, do `docker build -t mynameisvinn/my_jupyter .` dont forget the period, and replace `mynameisvinn/my_jupyter` with your own tag.
 
 ## from container to browser
-do `docker run -d -p 8887:8888 mynameisvinn/my_jupyter`. this command creates a container running a jupyter notebook, which can be accessed from `localhost:8887`.
+do `docker run -d -p 8887:8888 -v /Users/vincenttang/dropbox/temp/Docker-for-Data-Scientists/shared_data:/home/ds/notebooks/shared_data mynameisvinn/my_jupyter`. this command creates a container running a jupyter notebook accessible from `localhost:8887`. the `-v` tag syncs host's `/Users/vincenttang/dropbox/temp/Docker-for-Data-Scientists/shared_data` folder with the container's `/home/ds/notebooks/shared_data` folder.
 
 some other helpful commands:
 * *ssh into container* do `docker run -it mynameisvinn/my_jupyter`
@@ -27,5 +27,3 @@ this example uses dataquest's image, which contains python 2, jupyter notebook, 
 FROM dataquestio/python2-starter  # use prebuilt docker image
 COPY notebooks /home/ds/notebooks  # copy local notebooks from `src` to `/home/ds/notebooks`.
 ```
-
-

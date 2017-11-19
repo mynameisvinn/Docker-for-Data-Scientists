@@ -1,16 +1,14 @@
 # what is this?
-this repo contains a bare bones example to containerize jupyter notebooks.
+a bare bones example to containerize jupyter notebooks.
 
 ## from image to container
-after cloning this repo, do `docker build -t mynameisvinn/ipython .` dont forget the period, and replace `mynameisvinn/ipython` with your own tag.
+after cloning this repo, do `docker build -t mynameisvinn/my_jupyter .` dont forget the period, and replace `mynameisvinn/my_jupyter` with your own tag.
 
-this process will take a few minutes the first time, as docker starts pulling layers (eg dataquestio/python2 layer).
-
-## running
-do `docker run -d -p 8888:8888 mynameisvinn/ipython`. this command creates a container running a jupyter notebook, which can be accessed at `CONTAINER_IP:8888`. (find CONTAINER_IP with `docker-machine ip default`.)
+## from container to browser
+do `docker run -d -p 8887:8888 mynameisvinn/my_jupyter`. this command creates a container running a jupyter notebook, which can be accessed from `localhost:8887`.
 
 some other helpful commands:
-* *ssh into container* do `docker run -it mynameisvinn/ipython`
+* *ssh into container* do `docker run -it mynameisvinn/my_jupyter`
 * *stop containers*. do `docker stop $(docker ps -a -q)`
 * *remove images*. do `docker rmi $(docker images -a -q)`
 

@@ -1,0 +1,9 @@
+version: "3"
+services:
+  jup:
+      image: mynameisvinn/my_jupyter
+      volumes:
+        - /Users/vincenttang/dropbox/temp/Docker-for-Data-Scientists/shared_data:/home/ds/notebooks/shared_data
+      ports:
+        - 8887:8888
+      container_name: jup

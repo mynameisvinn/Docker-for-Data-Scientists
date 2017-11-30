@@ -1,10 +1,10 @@
 FROM python:3.6-slim
 
-# Copying requirements.txt file
 COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
-# pip install 
-RUN pip install --no-cache -r requirements.txt
+COPY notebooks /home
+WORKDIR /home
 
 # Exposing ports
 EXPOSE 8888

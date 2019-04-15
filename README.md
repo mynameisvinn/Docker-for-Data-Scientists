@@ -1,14 +1,14 @@
 # what is this?
-a bare bones example to containerize jupyter notebooks. you can share images freely, knowing that the recipient will have everything necessary to run your jupyter notebook.
+a bare bones example to containerize jupyter notebooks. 
 
 ## instructions
-#### from image to container
-clone this repo, then do `docker build -t mynameisvinn/ds .` dont forget the period, and replace `mynameisvinn/ds` with your own tag.
+#### spinning up a docker container
+after cloning this repo, do `docker build -t mynameisvinn/ds .` (dont forget the period, and replace `mynameisvinn/ds` with your own tag.)
 
-#### from container to browser
-do `docker run -d -p 8887:8888 -v /Users/vincenttang/dropbox/temp/Docker-for-Data-Scientists/shared_data:/home mynameisvinn/ds`. this will create a container running a jupyter notebook accessible from `localhost:8887`, which can be accessed with the password `demo`.
+#### running the container
+after pulling in the appropriate images (eg python:3.6-slim), we run the container with `docker run -d -p 8887:8888 -v /Users/vincenttang/dropbox/temp/Docker-for-Data-Scientists/shared_data:/home mynameisvinn/ds`. this creates a container - which runs a jupyter notebook accessible from `localhost:8887` (password: demo) - accessible through a browser.
 
-the `-v` tag syncs host's `/Users/vincenttang/dropbox/temp/Docker-for-Data-Scientists/shared_data` folder with the container's `/home` folder.
+the `-v` tag syncs the localhost's `/Users/vincenttang/dropbox/temp/Docker-for-Data-Scientists/shared_data` folder with the container's `/home` folder.
 
 other helpful commands:
 * *ssh into container* do `docker run -it mynameisvinn/ds`
